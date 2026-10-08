@@ -1,0 +1,31 @@
+{
+  "input": "input/adventure_talk_npcs.txt",
+  "seconds": 200,
+  "exit_after_ticks": 5600,
+  "min_fps": 45,
+  "min_fps_3d": 49,
+  "min_fps_1pct_low_3d": 45,
+  "expects_3d": true,
+  "min_final_read": 5400,
+  "checkpoints": [
+    {"name": "peach_town_spawn", "read": 3500, "not_black": true, "max_flat": 0.5},
+    {"name": "npc_approaching", "read": 4650, "not_black": true, "max_flat": 0.5},
+    {"name": "dialogue_box_opens", "read": 4700, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [80, 90, 12], "tol": 30, "what": "dialogue box (olive panel)"}},
+    {"name": "dialogue_text_page1", "read": 4740, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [87, 93, 23], "tol": 30, "what": "dialogue box with text"}},
+    {"name": "dialogue_text_page2", "read": 4830, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [82, 91, 16], "tol": 30, "what": "dialogue box page 2"}},
+    {"name": "dialogue_text_page3", "read": 4880, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [85, 92, 19], "tol": 30, "what": "dialogue box page 3"}},
+    {"name": "dialogue_closed", "read": 5000, "not_black": true, "max_flat": 0.5},
+    {"name": "dialogue_reopened", "read": 5110, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [87, 93, 23], "tol": 30, "what": "dialogue box re-opened by a second contact"}},
+    {"name": "dialogue_end", "read": 5400, "not_black": true, "max_flat": 0.5}
+  ],
+  "audio": [
+    {"name": "town_music_before_contact", "from_read": 3500, "to_read": 4650, "min_rms": 100},
+    {"name": "dialogue_sfx_and_music", "from_read": 4700, "to_read": 4900, "min_rms": 100},
+    {"name": "town_music_after_dialogue", "from_read": 5000, "to_read": 5400, "min_rms": 100}
+  ]
+}

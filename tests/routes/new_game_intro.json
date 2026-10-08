@@ -1,0 +1,14 @@
+{
+  "input": "input/new_game_intro.txt",
+  "seconds": 110,
+  "min_fps": 20,
+  "min_fps_3d": 0,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "name_entry_done", "read": 1100, "not_black": true},
+    {"name": "currency_entry", "read": 1320, "not_black": true},
+    {"name": "office_cutscene", "read": 1700, "not_black": true, "max_flat": 0.5},
+    {"name": "q_factory_parts", "read": 2900, "not_black": true, "max_flat": 0.5},
+    {"name": "peach_town_free_roam", "read": 3500, "not_black": true, "max_flat": 0.5}
+  ]
+}

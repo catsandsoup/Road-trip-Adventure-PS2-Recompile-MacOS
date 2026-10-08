@@ -1,0 +1,14 @@
+{
+  "input": "input/boot_to_title.txt",
+  "seconds": 100,
+  "min_fps": 45,
+  "min_fps_3d": 0,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "language_select", "read": 250, "not_black": true},
+    {"name": "title_menu", "read": 760, "not_black": true},
+    {"name": "name_entry", "read": 1500, "not_black": true},
+    {"name": "currency_entry", "read": 2700, "not_black": true},
+    {"name": "office_cutscene", "read": 3650, "not_black": true, "max_flat": 0.5}
+  ]
+}

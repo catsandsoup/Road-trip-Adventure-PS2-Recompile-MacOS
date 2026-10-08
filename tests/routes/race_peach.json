@@ -1,0 +1,22 @@
+{
+  "input": "input/race_peach.txt",
+  "seconds": 300,
+  "exit_after_ticks": 9100,
+  "min_fps": 45,
+  "min_fps_3d": 49,
+  "min_fps_1pct_low_3d": 45,
+  "expects_3d": true,
+  "min_final_read": 9000,
+  "checkpoints": [
+    {"name": "race_countdown", "read": 1400, "not_black": true, "max_flat": 0.5},
+    {"name": "lap1", "read": 3000, "not_black": true, "max_flat": 0.5},
+    {"name": "lap2", "read": 5300, "not_black": true, "max_flat": 0.5},
+    {"name": "lap3", "read": 7500, "not_black": true, "max_flat": 0.5},
+    {"name": "finish_banner", "read": 8240, "not_black": true, "max_flat": 0.5},
+    {"name": "result_panel", "read": 8640, "not_black": true, "max_flat": 0.6},
+    {"name": "back_to_menu", "read": 9050, "not_black": true}
+  ],
+  "car": {"from_frame": 200, "to_frame": 6900, "min_distance": 3500, "max_stall_frames": 50,
+          "ref": "tracks/C/ref_peach.json", "max_ref_dist": 15},
+  "audio": [{"name": "race_music", "from_read": 1500, "to_read": 8000, "min_rms": 100}]
+}

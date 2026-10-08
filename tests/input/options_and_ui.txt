@@ -1,0 +1,32 @@
+# title -> Options (3x down): open and close every sub-menu (Vibration, Speaker, Sound Volume, Language) with
+# Cross / Triangle (no setting is changed), Exit back to the title, then Quick Race -> course select and step the
+# course carousel right 7 times. Keyed on port-0 pad reads.
+300 6 cross
+700 6 start
+760 6 down
+790 6 down
+820 6 down
+860 6 cross
+950 6 cross
+1010 6 triangle
+1060 6 down
+1100 6 cross
+1160 6 triangle
+1210 6 down
+1250 6 cross
+1310 6 triangle
+1360 6 down
+1400 6 cross
+1460 6 triangle
+1510 6 down
+1550 6 cross
+1650 6 up
+1680 6 up
+1720 6 cross
+1900 6 right
+1980 6 right
+2060 6 right
+2140 6 right
+2220 6 right
+2300 6 right
+2380 6 right

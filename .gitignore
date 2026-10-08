@@ -1,0 +1,38 @@
+# Never commit anything derived from the user's disc
+/work/
+/generated/
+/build/
+*.iso
+*.bin
+*.BIN
+*.elf
+SLES_*
+*.csv
+*.gsl
+*.GSL
+# local-only outputs and OS junk
+.DS_Store
+work/
+share/
+*.png
+*.wav
+*.ram
+*.vu1
+*.vu1code
+*.vu1data
+*.irx
+*.IRX
+# generated caches / local captures
+tests/oracle/.stubmap.json
+*.jpg
+*.jpeg
+!docs/images/*.jpg
+*.cue
+
+# internal session logs (contain local paths and disc-derived observations) and screenshots stay local
+docs/HANDOFF.md
+docs/CHANGELOG.md
+docs/images/
+imgui.ini
+__pycache__/
+*.pyc

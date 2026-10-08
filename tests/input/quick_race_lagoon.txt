@@ -1,0 +1,12 @@
+# quick race -> Lagoon Raceway (4x left from Peach) -> accelerate
+300 6 cross
+700 6 start
+760 6 down
+820 6 cross
+880 6 left
+910 6 left
+940 6 left
+970 6 left
+1010 6 cross
+1160 6 cross
+1360 1200 cross

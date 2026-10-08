@@ -1,0 +1,21 @@
+{
+  "input": "input/options_and_ui.txt",
+  "seconds": 90,
+  "exit_after_ticks": 2480,
+  "min_fps": 45,
+  "min_fps_3d": 0,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "options_menu", "read": 930, "not_black": true, "max_flat": 0.6},
+    {"name": "vibration_submenu", "read": 990, "not_black": true, "max_flat": 0.6},
+    {"name": "speaker_submenu", "read": 1140, "not_black": true, "max_flat": 0.6},
+    {"name": "volume_submenu", "read": 1290, "not_black": true, "max_flat": 0.6},
+    {"name": "language_submenu", "read": 1440, "not_black": true, "max_flat": 0.6},
+    {"name": "title_after_exit", "read": 1640, "not_black": true, "max_flat": 0.6},
+    {"name": "course_select", "read": 1880, "not_black": true, "max_flat": 0.6},
+    {"name": "course_temple", "read": 1960, "not_black": true, "max_flat": 0.6},
+    {"name": "course_plus4", "read": 2200, "not_black": true, "max_flat": 0.6},
+    {"name": "course_plus7", "read": 2460, "not_black": true, "max_flat": 0.6}
+  ],
+  "audio": [{"name": "title_music", "from_read": 760, "to_read": 1700, "min_rms": 100}]
+}

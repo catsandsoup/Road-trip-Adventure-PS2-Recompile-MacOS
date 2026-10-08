@@ -1,0 +1,7 @@
+# title -> Quick Race -> Peach Raceway (default) -> race. Keyed on pad reads; language at 300.
+300 6 cross
+700 6 start
+760 6 down
+820 6 cross
+950 6 cross
+1100 6 cross

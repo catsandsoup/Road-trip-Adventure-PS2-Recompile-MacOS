@@ -1,0 +1,13 @@
+{
+  "input": "input/quick_race.txt",
+  "seconds": 75,
+  "min_fps": 45,
+  "min_fps_3d": 45,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "title_menu", "read": 800, "not_black": true},
+    {"name": "course_select", "read": 1000, "not_black": true},
+    {"name": "race_countdown", "read": 1400, "not_black": true, "max_flat": 0.5},
+    {"name": "race_running", "read": 2400, "not_black": true, "max_flat": 0.5}
+  ]
+}

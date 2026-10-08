@@ -1,0 +1,19 @@
+{
+  "input": "input/race_lagoon.txt",
+  "seconds": 240,
+  "exit_after_ticks": 4600,
+  "min_fps": 45,
+  "min_fps_3d": 45,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "course_select_lagoon", "read": 1000, "not_black": true},
+    {"name": "race_countdown", "read": 1400, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_15s", "read": 2200, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_30s", "read": 2950, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_45s", "read": 3700, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_60s", "read": 4450, "not_black": true, "max_flat": 0.5}
+  ],
+  "car": {"from_frame": 221, "to_frame": 3300, "min_distance": 1200, "max_stall_frames": 50,
+          "ref": "tracks/C/ref_lagoon.json", "max_ref_dist": 15},
+  "audio": [{"name": "race_music", "from_read": 1500, "to_read": 4400, "min_rms": 100}]
+}

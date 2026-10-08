@@ -1,0 +1,17 @@
+{
+  "input": "input/free_roam_drive.txt",
+  "seconds": 200,
+  "exit_after_ticks": 6500,
+  "min_fps": 20,
+  "min_fps_3d": 0,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "peach_town_free_roam", "read": 3400, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_15s", "read": 4150, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_30s", "read": 4900, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_45s", "read": 5650, "not_black": true, "max_flat": 0.5},
+    {"name": "drive_60s", "read": 6400, "not_black": true, "max_flat": 0.5}
+  ],
+  "car": {"from_frame": 300, "to_frame": 3100, "min_distance": 150, "max_stall_frames": 600},
+  "audio": [{"name": "town_music", "from_read": 3500, "to_read": 6400, "min_rms": 100}]
+}

@@ -1,0 +1,20 @@
+{
+  "input": "input/shop_and_parts.txt",
+  "seconds": 150,
+  "exit_after_ticks": 4100,
+  "min_fps": 20,
+  "min_fps_3d": 0,
+  "expects_3d": true,
+  "checkpoints": [
+    {"name": "factory_menu", "read": 2745, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_tyres", "read": 2890, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_engines", "read": 2950, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_chassis", "read": 3010, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_transmission", "read": 3070, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_steering", "read": 3130, "not_black": true, "max_flat": 0.5},
+    {"name": "parts_brake", "read": 3190, "not_black": true, "max_flat": 0.5},
+    {"name": "factory_menu_again", "read": 3390, "not_black": true, "max_flat": 0.5},
+    {"name": "peach_town", "read": 4080, "not_black": true, "max_flat": 0.5}
+  ],
+  "audio": [{"name": "factory_music", "from_read": 2800, "to_read": 3400, "min_rms": 100}]
+}

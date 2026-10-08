@@ -1,0 +1,37 @@
+{
+  "input": "input/adventure_drive_highspeed.txt",
+  "seconds": 300,
+  "exit_after_ticks": 8950,
+  "min_fps": 45,
+  "min_fps_3d": 49,
+  "min_fps_1pct_low_3d": 45,
+  "expects_3d": true,
+  "min_final_read": 8800,
+  "checkpoints": [
+    {"name": "town_spawn", "read": 4500, "not_black": true, "max_flat": 0.5},
+    {"name": "npc_dialogue", "read": 4780, "not_black": true, "max_flat": 0.5,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [87, 93, 23], "tol": 30, "what": "dialogue box"}},
+    {"name": "town_run_start", "read": 5000, "not_black": true, "max_flat": 0.5},
+    {"name": "town_shops", "read": 5300, "not_black": true, "max_flat": 0.5},
+    {"name": "hills", "read": 5800, "not_black": true, "max_flat": 0.6},
+    {"name": "hillside_run", "read": 6300, "not_black": true, "max_flat": 0.6},
+    {"name": "plain_before_seam", "read": 7300, "not_black": true, "max_flat": 0.8},
+    {"name": "east_of_seam_braking", "read": 7800, "not_black": true, "max_flat": 0.8},
+    {"name": "u_turn", "read": 8100, "not_black": true, "max_flat": 0.8},
+    {"name": "back_across_seam", "read": 8400, "not_black": true, "max_flat": 0.8},
+    {"name": "west_of_seam", "read": 8850, "not_black": true, "max_flat": 0.8}
+  ],
+  "car": {"from_frame": 1500, "to_frame": 5400, "min_distance": 3500, "max_stall_frames": 600,
+          "min_top_speed": 20000, "min_impacts": 1,
+          "zones": [
+            {"name": "peach_town_before_seam", "xz": [1560, 675], "r": 25, "after": 3800, "before": 4260},
+            {"name": "field_232_east_of_seam", "xz": [30, 686], "r": 25, "after": 4250, "before": 4500},
+            {"name": "back_in_223_west_of_seam", "xz": [1580, 689], "r": 25, "after": 4900, "before": 5200}
+          ]},
+  "cd_reads": [{"name": "stream_FLD232_before_seam", "file": "FLD/232", "after": 2000, "before": 4260}],
+  "audio": [
+    {"name": "town_music", "from_read": 4900, "to_read": 5400, "min_rms": 100},
+    {"name": "highspeed_drive", "from_read": 5500, "to_read": 7500, "min_rms": 100},
+    {"name": "uturn_return", "from_read": 7900, "to_read": 8800, "min_rms": 100}
+  ]
+}
