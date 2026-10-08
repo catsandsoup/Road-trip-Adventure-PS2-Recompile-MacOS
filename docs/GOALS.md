@@ -98,6 +98,7 @@ Approach to research and verify before building: use web search and Context7 for
 | Q2 | Skip intro logos | Optional; goes straight to the title. |
 | Q3 | Language | English/French/German selectable in settings (sets the game's own language choice). |
 | Q4 | Save slots / backup | Automatic save backup; import/export of PS2 memory-card saves (.ps2/.max/raw). |
+| Q5 | **Starting car chooser** | On a new Adventure, after the name/currency screens, an opt-in extra screen (the game's own UI style, like the body shop's car-body picker) lets the player choose the first car body and colour instead of the random one. Default OFF keeps the original random assignment. Picking writes only the same save fields the game itself writes. | Replay: with the option off the first car is identical to the original for the same seed; with it on the chosen body/colour appears in the office, Q's Factory and the save file. First task: root-cause where the random body comes from (RNG seed source? RTC/frame timer?) and whether it is the original PS2 behaviour. |
 
 ### 5.5 Mods and extensibility
 | ID | Item | Success criterion |
