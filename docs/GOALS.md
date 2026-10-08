@@ -7,6 +7,8 @@
 **Hard rules:** no emulation in the shipping build (§2), and nothing derived from the disc is ever committed or published (§9).
 
 ---
+**Approvals (user, 2026-10-08):** Metal becomes the default backend when the G2f gate passes (the CPU backend stays as G9's reference); reference frames may be replaced when diffs are explained and verified.
+
 ## 1. Definition of done (all must hold)
 1. Every success criterion in §3–§8 is met (the §5.7 D-items are opt-in extras: D1–D4 are required, D5–D7 are research deliverables) and checked off, with evidence linked in `CHANGELOG.md`.
 2. All gameplay routes in §6 pass in CI-style automated runs on macOS arm64, and the user signs off after a manual playthrough.
