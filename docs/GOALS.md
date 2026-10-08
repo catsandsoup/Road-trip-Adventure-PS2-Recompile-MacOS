@@ -22,7 +22,7 @@
 | EE (R5900) game code | statically recompiled C++ | done (10,765 functions) |
 | EE FPU / VU0 macro / MMI | inline C++/SIMD with PS2-accurate semantics | done (FPU + VU0 semantics fixed) |
 | VU1 microcode | statically recompiled per microprogram | done: main tree, all 8 dispatch slots, 0 fallbacks on boot and race |
-| GS | native renderer (Metal on macOS; Vulkan/D3D12/WebGPU later), consuming GIF packets | CPU backend works; Metal not started |
+| GS | native renderer (Metal on macOS; Vulkan/D3D12/WebGPU later), consuming GIF packets | **Metal is the default** (2026-10-09, byte-identical to the CPU reference; 1x-8x scale); CPU backend kept as reference |
 | IOP + IRX modules | native host services, no R3000 execution | done: all 7 IRXs native |
 | BIOS / kernel | host syscalls (threads, semaphores, interrupts, DMA, SIF) | done (runtime) |
 | Mods | named, hookable functions plus asset override folder | not started |
