@@ -1,0 +1,37 @@
+{
+  "input": "input/adventure_buildings.txt",
+  "seconds": 220,
+  "exit_after_ticks": 6300,
+  "min_fps": 45,
+  "min_fps_3d": 49,
+  "min_fps_1pct_low_3d": 45,
+  "expects_3d": true,
+  "min_final_read": 6200,
+  "checkpoints": [
+    {"name": "town_spawn", "read": 3350, "not_black": true, "max_flat": 0.5},
+    {"name": "qf_interior_fade_in", "read": 3565, "not_black": true, "max_flat": 0.6},
+    {"name": "qf_dialogue", "read": 3615, "not_black": true, "max_flat": 0.6,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [76, 89, 6], "tol": 30, "what": "Q's Factory dialogue box"}},
+    {"name": "qf_menu", "read": 3690, "not_black": true, "max_flat": 0.6,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [78, 90, 8], "tol": 30, "what": "Q's Factory menu/dialogue box"}},
+    {"name": "qf_goodbye_then_exit", "read": 3915, "not_black": true, "max_flat": 0.7},
+    {"name": "town_after_qf", "read": 4250, "not_black": true, "max_flat": 0.5},
+    {"name": "paint_approach", "read": 4515, "not_black": true, "max_flat": 0.5},
+    {"name": "paint_door", "read": 4615, "not_black": true, "max_flat": 0.5},
+    {"name": "paint_interior_dialogue", "read": 4840, "not_black": true, "max_flat": 0.6,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [87, 93, 22], "tol": 30, "what": "Paint Shop dialogue box"}},
+    {"name": "paint_dialogue_page2", "read": 5090, "not_black": true, "max_flat": 0.6,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [85, 92, 20], "tol": 30, "what": "Paint Shop page 2"}},
+    {"name": "paint_dialogue_page3", "read": 5315, "not_black": true, "max_flat": 0.6,
+     "region_rgb": {"box": [0.1, 0.78, 0.7, 0.88], "rgb": [81, 90, 15], "tol": 30, "what": "Paint Shop page 3"}},
+    {"name": "paint_leaving", "read": 5540, "not_black": true, "max_flat": 0.7},
+    {"name": "town_after_paint", "read": 5900, "not_black": true, "max_flat": 0.5},
+    {"name": "town_end", "read": 6250, "not_black": true, "max_flat": 0.5}
+  ],
+  "audio": [
+    {"name": "town_music", "from_read": 3350, "to_read": 3480, "min_rms": 100},
+    {"name": "qf_interior", "from_read": 3580, "to_read": 3950, "min_rms": 100},
+    {"name": "paint_interior", "from_read": 4720, "to_read": 5500, "min_rms": 100},
+    {"name": "town_music_after", "from_read": 5850, "to_read": 6250, "min_rms": 100}
+  ]
+}

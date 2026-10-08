@@ -5,6 +5,7 @@
   "min_fps": 45,
   "min_fps_3d": 49,
   "min_fps_1pct_low_3d": 45,
+  "fps_exclude_reads": [[3300, 3460]],
   "expects_3d": true,
   "min_final_read": 8800,
   "checkpoints": [

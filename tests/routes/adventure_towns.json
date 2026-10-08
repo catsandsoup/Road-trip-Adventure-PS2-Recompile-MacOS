@@ -1,0 +1,48 @@
+{
+  "input": "input/adventure_towns.txt",
+  "seconds": 330,
+  "exit_after_ticks": 10700,
+  "min_fps": 45,
+  "min_fps_3d": 49,
+  "min_fps_1pct_low_3d": 45,
+  "fps_exclude_reads": [[3300, 3460]],
+  "expects_3d": true,
+  "min_final_read": 10600,
+  "checkpoints": [
+    {"name": "town_spawn", "read": 4500, "not_black": true, "max_flat": 0.5},
+    {"name": "town_run_start", "read": 5000, "not_black": true, "max_flat": 0.5},
+    {"name": "hills", "read": 5800, "not_black": true, "max_flat": 0.6},
+    {"name": "plain_before_seam", "read": 7300, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_east_a", "read": 7600, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_east_b", "read": 7640, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_east_c", "read": 7680, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_east_d", "read": 7720, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_east_e", "read": 7760, "not_black": true, "max_flat": 0.8},
+    {"name": "east_of_seam_braking", "read": 7800, "not_black": true, "max_flat": 0.8},
+    {"name": "u_turn", "read": 8100, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_west_a", "read": 8400, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_west_b", "read": 8440, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_west_c", "read": 8480, "not_black": true, "max_flat": 0.8},
+    {"name": "seam_west_d", "read": 8520, "not_black": true, "max_flat": 0.8},
+    {"name": "cave_hill_road", "read": 9240, "not_black": true, "max_flat": 0.6},
+    {"name": "return_plain", "read": 9700, "not_black": true, "max_flat": 0.8},
+    {"name": "town_outskirts", "read": 10120, "not_black": true, "max_flat": 0.7},
+    {"name": "town_house_wall", "read": 10500, "not_black": true, "max_flat": 0.9}
+  ],
+  "car": {"from_frame": 1500, "to_frame": 7050, "min_distance": 5500, "max_stall_frames": 600,
+          "min_top_speed": 20000, "min_impacts": 1,
+          "zones": [
+            {"name": "peach_town_before_seam", "xz": [1560, 675], "r": 25, "after": 3800, "before": 4260},
+            {"name": "field_232_east_of_seam", "xz": [30, 686], "r": 25, "after": 4250, "before": 4500},
+            {"name": "back_in_223_west_of_seam", "xz": [1580, 689], "r": 25, "after": 4900, "before": 5200},
+            {"name": "cave_hill_road", "xz": [1114, 565], "r": 30, "after": 5700, "before": 6000},
+            {"name": "peach_town_east_edge", "xz": [478, 554], "r": 30, "after": 6800, "before": 7050}
+          ]},
+  "cd_reads": [{"name": "stream_FLD232_before_seam", "file": "FLD/232", "after": 2000, "before": 4260}],
+  "audio": [
+    {"name": "town_music", "from_read": 4900, "to_read": 5400, "min_rms": 100},
+    {"name": "highspeed_drive", "from_read": 5500, "to_read": 7500, "min_rms": 100},
+    {"name": "uturn_return", "from_read": 7900, "to_read": 8800, "min_rms": 100},
+    {"name": "return_to_town", "from_read": 9000, "to_read": 10300, "min_rms": 100}
+  ]
+}

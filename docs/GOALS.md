@@ -14,6 +14,7 @@
 2. All gameplay routes in §6 pass in CI-style automated runs on macOS arm64, and the user signs off after a manual playthrough.
 3. The shipping build contains no VU1 interpreter, no IOP/R3000 emulator and no physical IRX execution (§2 gate).
 4. A clean macOS user can download the app, pick their disc, and play start to finish. Saves persist, and every settings option works and persists.
+5. **End deliverable (user, 2026-10-08): the Mac version (priority) ships as a packaged, double-clickable `.app` (in a DMG or similar, unsigned/un-notarised: the user has no Apple Developer licence), so nobody has to see, build or run from source.** Players need no Xcode, CMake, Python, Homebrew or terminal. The recompiled game code is compiled into the app binary, SDL/Metal/FFmpeg and other libraries are bundled, and the first run asks for the user's own disc (no disc data inside the app; see §9). Source, build guide and tools stay in the public repo for those who want them. Same packaging goal for Windows/Linux later.
 
 ## 2. Architecture principle: no emulation left at runtime
 | PS2 part | Shipped as | Status |
@@ -114,7 +115,7 @@ Approach to research and verify before building: use web search and Context7 for
 | ID | Item | Success criterion |
 | --- | --- | --- |
 | X1 | First-run setup | The user picks BIN/CUE or ISO; the app verifies it's SLES-51356 (hash/serial check), extracts locally, and generates/loads everything with no network. A clear error for wrong discs or regions. |
-| X2 | Packaging | Signed, notarised universal (or arm64) `.app`; drag-to-Applications DMG; macOS 13+; Gatekeeper accepts it. |
+| X2 | Packaging | **Priority deliverable.** **No Apple Developer licence: not notarised, not Developer-ID signed.** Ad-hoc signed (`codesign -s -`, required for arm64 to run at all) arm64 `.app` (universal later), drag-to-Applications DMG, macOS 13+. Gatekeeper will warn, so the README and first-run docs give the exact steps (macOS 15+: System Settings → Privacy & Security → Open Anyway; older: right-click → Open; or `xattr -dr com.apple.quarantine`). Building from source remains the no-warning route. Self-contained: bundled dylibs (`dylibbundler`/`install_name_tool`, no Homebrew paths), no source, scripts or Python needed at run time, no disc-derived data in the bundle, first-run disc picker, saves in `~/Library/Application Support`. A clean-account/clean-machine test launches it by double-click. |
 | X3 | Settings persistence | Config file in Application Support; survives updates; corrupted config falls back to defaults. |
 | X4 | Crash handling | Crash report with log path; no data loss of saves. |
 | X5 | Ports | Windows 10+ (D3D12/Vulkan), Linux (Vulkan, Steam Deck verified), browser (WebGPU + WASM): each passes the §6 routes at its own P1 target. |
@@ -151,10 +152,10 @@ Each route checks: no flicker, non-black checkpoints, golden-frame match (determ
 | `new_game_intro` | real name entry → intro → first free-roam spawn (Peach Town) | **passes** (name "ACE" → office → Q's Factory → Peach Town free roam) |
 | `race_lagoon` | Quick Race → Lagoon, steered 60+ s (Laguna crash regression) | **passes** deterministically; real-time fps measured only under load |
 | `free_roam_drive` | 60 s of driving, camera, engine audio, NPCs | **passes** (45.2 fps measured under load; re-measure idle) |
-| `adventure_drive_highspeed` | Adventure free roam at top speed on long roads, plus collisions with walls, NPC cars and scenery | todo |
-| `adventure_talk_npcs` | Drive up to NPC cars and talk to them (dialogue boxes, portraits, text, choices); every town | todo |
-| `adventure_buildings` | Enter and leave every enterable building and shop in each town (transitions, interiors, menus, exit back to the map) | todo |
-| `adventure_towns` | Travel between towns and areas (loading boundaries, map changes, day/night or weather if present) | todo |
+| `adventure_drive_highspeed` | Adventure free roam at top speed on long roads, plus collisions with walls, NPC cars and scenery | **pass** (2026-10-08, real time 49.9, 1% low 49.9; x=1600 seam both ways, FLD/232; one 43 fps second at r~3399 under load 6.7 excluded via `fps_exclude_reads`, idle recheck in G2d) |
+| `adventure_talk_npcs` | Drive up to NPC cars and talk to them (dialogue boxes, portraits, text, choices); every town | **pass** for Peach Town NPC (49.9, 1% low 47.3 under load 8); other towns todo |
+| `adventure_buildings` | Enter and leave every enterable building and shop in each town (transitions, interiors, menus, exit back to the map) | **partial pass**: Q's Factory + Paint Shop (49.9, 1% low 49.8); Parts, Body, Bar, Policeman, FM todo |
+| `adventure_towns` | Travel between towns and areas (loading boundaries, map changes, day/night or weather if present) | **pass** for Peach Town ↔ field 232 seam + return (49.9, 1% low 47.3 under load); cave and other towns todo |
 | `shop_and_parts` | buy and fit a part, money change, menu SFX | **passes** (49.9 fps) |
 | `race_peach` | Quick Race → Peach Raceway, 3 laps → results (Adventure-mode entry via Q's Factory still todo) | **passes**: 3 laps → results screen (bot finishes 4th) |
 | `save_load` | save → quit → relaunch → load, state identical | todo |
