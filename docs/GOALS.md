@@ -59,6 +59,8 @@ In the style of the N64Recomp-family ports: an in-app settings menu (native, not
 
 Approach to research and verify before building: use web search and Context7 for how Zelda64Recomp/RT64 implement interpolation, widescreen and resolution scaling.
 
+**Settings placement (user decision, 2026-10-08):** the preferred home for graphics options (resolution scale, aspect, frame rate, FOV, view distance) is a new **"Graphics" page inside the game's own Options menu** (and optionally Pause > Settings), drawn with the game's own panel/font art via function hooks (M3), with no change to save data or menu logic. The macOS menu bar (View menu, Cmd+F) and a native settings window are the fallback, and ship first as the cheap path. Medium effort; after Metal M5 and the SDL3 shell.
+
 ### 5.1 Graphics
 | ID | Option | Success criterion |
 | --- | --- | --- |

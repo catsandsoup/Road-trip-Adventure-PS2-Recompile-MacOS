@@ -163,7 +163,7 @@ The recompiler and runtime live in a fork of **[ran-j/PS2Recomp](https://github.
 Requirements: Xcode command-line tools; Homebrew `cmake ninja pkgconf ffmpeg sdl2`; Python 3 with Pillow (test tools); Node 22 (oracle tests).
 1. Dump **your own** disc to an ISO and extract it, outside this repo.
 2. Clone the PS2Recomp fork (`claude/rta-port`) next to this repo and build `ps2_recomp` / `ps2_analyzer`.
-3. Generate the game's C++ locally from your `SLES_513.56`: run discovery, `tools/apply_stub_policy.py`, then `ps2_recomp`. The output goes to a local `work/` folder that is never committed. *Not one-click yet; the exact commands are in [`docs/HANDOFF.md`](docs/HANDOFF.md) §3. A first-run setup screen is planned.*
+3. Generate the game's C++ locally from your `SLES_513.56`: run discovery, `tools/apply_stub_policy.py`, then `ps2_recomp`. The output goes to a local `work/` folder that is never committed. *Not one-click yet; the exact commands are in [`docs/BUILDING.md`](docs/BUILDING.md). A first-run setup screen is planned.*
 4. Build `ps2EntryRunner` against the generated sources and run `tools/run.sh /path/to/your.iso`.
 
 Controls: arrows = D-pad, **X** Cross, **C** Circle, **Z** Square, **V** Triangle, **Enter** Start, **F1** debug panel. Gamepads are supported.
