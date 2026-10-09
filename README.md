@@ -8,6 +8,12 @@
 
 ![status](https://img.shields.io/badge/status-early%20but%20playable-orange) ![platform](https://img.shields.io/badge/platform-macOS%20arm64-blue) ![license](https://img.shields.io/badge/runtime-GPL--3.0-green)
 
+## Videos
+
+Follow development on [Monty Giovenco's YouTube channel](https://www.youtube.com/@MontyGiovenco).
+
+Latest video: [**Road Trip Adventure Recompiled on Mac: New Rendering, Custom Car Bodies & Colours**](https://www.youtube.com/watch?v=erYWrzTuPpc).
+
 <p align="center"><img src="docs/images/collage.jpg" width="820" alt="Title, office cutscene, Q's Factory, Peach Town free roam, course select, race start, racing"></p>
 <p align="center"><sub>All frames rendered by the native build (software GS, 512×512 PAL output, shown at 4:3).</sub></p>
 
