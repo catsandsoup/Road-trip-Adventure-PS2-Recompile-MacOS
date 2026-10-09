@@ -1,12 +1,17 @@
 # Road Trip Adventure: a native PS2 static recompilation
 
+> [!IMPORTANT]
+> **This project is paused.** For a complete, actively developed native port of this game, with widescreen, 120 Hz, an in-game settings menu, save states and a Mac app that builds the game from your own disc, please use **[silentsudin/RoadTripAdventure-recomp](https://github.com/silentsudin/RoadTripAdventure-recomp)** (USA disc, SLUS-20398).
+>
+> This repository stays up as an archive of PAL (SLES-51356) recompilation work and research notes, which may help anyone adding PAL support there.
+
 <p align="center"><img src="docs/images/hero_race.jpg" width="640" alt="Peach Raceway start, running natively on an M1 Mac"></p>
 
 **_Road Trip Adventure_** (PAL, SLES-51356; *Choro Q HG 2* in Japan, *Road Trip* in North America) **running natively on Apple Silicon**. The game's own MIPS code is **statically recompiled to C++**, as are its **VU1 vector microprograms**. Its IOP sound driver is **re-implemented natively**. No PS2 BIOS, no CPU emulator, no interpreter in the hot path. It's in the spirit of N64Recomp / Zelda64Recomp, but for the PS2's much stranger hardware.
 
 > **No game code or data is in this repository.** You need your own disc. The tools read *your* image locally and generate everything on your machine.
 
-![status](https://img.shields.io/badge/status-early%20but%20playable-orange) ![platform](https://img.shields.io/badge/platform-macOS%20arm64-blue) ![license](https://img.shields.io/badge/runtime-GPL--3.0-green)
+![status](https://img.shields.io/badge/status-paused-lightgrey) ![platform](https://img.shields.io/badge/platform-macOS%20arm64-blue) ![license](https://img.shields.io/badge/runtime-GPL--3.0-green)
 
 ## Videos
 
