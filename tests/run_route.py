@@ -26,6 +26,8 @@ Checks (all reported, non-zero exit on failure):
   - optional "audio": [{"name": "race_music", "from_read": 1500, "to_read": 2400, "min_rms": 100}]
     dumps the final mix (PS2X_AUDIO_DUMP=<out>/audio.wav; the host output stays muted) and requires the median
     RMS of the 0.5 s windows (game/tests/audio/wav_report.py) inside the read window to reach min_rms.
+    With "min_active_frac": f the rule is instead "at least fraction f of those windows reach min_rms" (for
+    intermittent sound such as menu SFX separated by digital silence, where a median is a coin toss).
     WAV time is wall-clock time since the dump was opened, so reads are mapped to WAV time through the
     modification times of the dumped frames (their _r<read> tags).
   - optional "car": {"from_frame": .., "to_frame": .., "min_distance": .., "max_stall_frames": ..,
@@ -177,8 +179,15 @@ def check_audio(specs, wav_path, files, report):
             entry["max_rms"] = sel[-1]
         res[spec["name"]] = entry
         need = spec.get("min_rms", 100)
+        frac = spec.get("min_active_frac")  # MX1: optional rule for intermittent sound (menu SFX between silences)
+        if sel and frac is not None:
+            entry["active_frac"] = round(sum(1 for r in sel if r >= need) / len(sel), 3)
         if not sel:
             report["failures"].append(f"audio {spec['name']}: WAV has no samples in {a:.1f}-{b:.1f} s")
+        elif frac is not None:
+            if entry["active_frac"] < frac:
+                report["failures"].append(f"audio {spec['name']}: only {entry['active_frac']:.2f} of windows reach RMS {need} "
+                                          f"(< {frac}; silent?)")
         elif entry["median_rms"] < need:
             report["failures"].append(f"audio {spec['name']}: median RMS {entry['median_rms']} < {need} (silent?)")
 

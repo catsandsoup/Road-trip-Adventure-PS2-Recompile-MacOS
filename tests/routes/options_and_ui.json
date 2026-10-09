@@ -17,5 +17,6 @@
     {"name": "course_plus4", "read": 2200, "not_black": true, "max_flat": 0.6},
     {"name": "course_plus7", "read": 2460, "not_black": true, "max_flat": 0.6}
   ],
-  "audio": [{"name": "title_music", "from_read": 760, "to_read": 1700, "min_rms": 100}]
+  "audio": [{"name": "menu_sfx", "from_read": 760, "to_read": 1600, "min_rms": 100, "min_active_frac": 0.3},
+            {"name": "title_music", "from_read": 1680, "to_read": 2400, "min_rms": 100}]
 }
